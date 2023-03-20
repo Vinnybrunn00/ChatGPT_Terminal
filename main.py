@@ -5,7 +5,7 @@ import openai
 import sys
 import os
 
-openai.api_key = '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'
+openai.api_key = 'YOUR_TOKEN_OPENAI'
 
 clear = 'cls' if os.name == 'nt' else 'clear'
 os.system(clear)
