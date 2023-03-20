@@ -1,9 +1,11 @@
 from rich import print
+from time import sleep
 import pyfiglet as pg
 import openai
+import sys
 import os
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 clear = 'cls' if os.name == 'nt' else 'clear'
 os.system(clear)
@@ -19,6 +21,7 @@ while True:
         messages=message)
     reply = output.choices[0].message.content
 
-    print(
-        f'\n\n------------------------------------------\n🌐🤖›[green]{reply}[/]\n\n------------------------------------------'
-            )
+    for i in list(f'{reply}\n\n\n'):
+        print(f'[cyan][bold]{i}[/]', end='')
+        sys.stdout.flush()
+        sleep(0.03)
